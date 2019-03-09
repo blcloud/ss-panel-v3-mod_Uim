@@ -7,7 +7,6 @@
 	<meta name="theme-color" content="#4285f4">
 	<title>{$config["appName"]}</title>
 
-
 	<!-- css -->
 	<link href="/theme/material/css/base.min.css" rel="stylesheet">
 	<link href="/theme/material/css/project.min.css" rel="stylesheet">
@@ -16,7 +15,8 @@
 	<!-- jquery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1"></script>
     <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs@gh-pages/qrcode.min.js"></script>
-
+	<!-- js -->
+	<script src="/assets/js/fuck.js"></script>
 </head>
 <body class="page-orange">
 	<header class="header header-orange header-transparent header-waterfall ui-header">
@@ -86,6 +86,12 @@
 								</a>
 							</li>
 
+							<li>
+								<a href="/user/trafficlog">
+									<i class="icon icon-lg">hourglass_empty</i>&nbsp;流量记录
+								</a>
+							</li>
+
 							{if $config['enable_ticket']=='true'}
                             <li>
 								<a href="/user/ticket">
@@ -99,7 +105,6 @@
 									<i class="icon icon-lg">loyalty</i>&nbsp;邀请链接
 								</a>
 							</li>
-							
 						</ul>
 
 
@@ -118,16 +123,19 @@
 							</li>
 
 							<li>
-								<a href="/user/trafficlog">
-									<i class="icon icon-lg">hourglass_empty</i>&nbsp;流量记录
+								<a href="/user/lookingglass">
+									<i class="icon icon-lg">visibility</i>&nbsp;延迟检测
 								</a>
 							</li>
 
 							<li>
-								<a href="/user/lookingglass">
-									<i class="icon icon-lg">visibility</i>&nbsp;延迟检测
-								</a>
 								<a href="/user/announcement">
+									<i class="icon icon-lg">announcement</i>&nbsp;网站公告
+								</a>
+							</li>
+
+							<li>
+								<a href="/user/tutorial">
 									<i class="icon icon-lg">start</i>&nbsp;使用教程
 								</a>
 							</li>
@@ -195,4 +203,4 @@
 		</div>
 	</nav>
 
-{if $config["enable_crisp"] == 'true'}{include file='crisp.tpl'}{/if}
+{if $config["enable_mylivechat"] == 'true'}{include file='mylivechat.tpl'}{/if}

@@ -1,35 +1,23 @@
 ﻿{include file='user/main.tpl'}
 
-<script src="//cdn.jsdelivr.net/gh/YihanH/canvasjs.js@v2.2/canvasjs.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/SuicidalCat/canvasjs.js@v2.3.1/canvasjs.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 {function displayV2rayNode node=null}
 	{assign var=server_explode value=";"|explode:$node['server']}
 
-	<p>地址：<span class="label label-brand-accent">
-												{$server_explode[0]}
-											</span></p>
+	<p>地址：<span class="card-tag tag-blue">{$server_explode[0]}</span></p>
 
-	<p>端口：<span class="label label-brand-red">
-												{$server_explode[1]}
-											</span></p>
+	<p>端口：<span class="card-tag tag-volcano">{$server_explode[1]}</span></p>
 
-	<p>协议参数：<span class="label label-green">
-												{$server_explode[0]}
-											</span></p>
+	<p>协议参数：<span class="card-tag tag-green">{$server_explode[0]}</span></p>
 
-	<p>用户 UUID：<span class="label label-brand">
-												{$user->getUuid()}
-											</span></p>
+	<p>用户 UUID：<span class="card-tag tag-geekblue">{$user->getUuid()}</span></p>
 
-	<p>流量比例：<span class="label label-red">
-												{$node['traffic_rate']}
-											</span></p>
+	<p>流量比例：<span class="card-tag tag-red">{$node['traffic_rate']}</span></p>
 
-	<p>AlterId：<span class="label label-green">
-												{$server_explode[2]}
-											</span></p>
+	<p>AlterId：<span class="card-tag tag-purple">{$server_explode[2]}</span></p>
 
 	<p>VMess链接：
 		<a class="copy-text" data-clipboard-text="{URL::getV2Url($user, $node['raw_node'])}">点击复制</a>
@@ -131,6 +119,7 @@
 										</div>
 									{elseif $node['sort'] == 11}
 										{displayNodeLinkV2 node=$node}
+										{$point_node=$node}
 									{/if}
 
 									{if $node['sort'] == 0 || $node['sort'] == 10}
@@ -259,6 +248,7 @@
 
 													{elseif $node['sort'] == 11}
 														{displayNodeLinkV2 node=$node}
+														{$point_node=$node}
 												    {/if}
 
                                                     {if $node['sort'] == 0 || $node['sort'] == 10}

@@ -20,7 +20,6 @@ class Config
     {
         return [
             "appName" => self::get("appName"),
-            "appStartTime" => self::get("appStartTime"),
             "version" => VERSION,
             "baseUrl" => self::get("baseUrl"),
 			"min_port" => self::get("min_port"),
@@ -35,11 +34,12 @@ class Config
 			"port_price_specify" => self::get("port_price_specify"),
             "jump_delay" => self::get("jump_delay"),
             "enable_analytics_code" => self::get("enable_analytics_code"),
+            "sspanelAnalysis" => self::get("sspanelAnalysis"),
             "enable_donate" => self::get("enable_donate"),
             "enable_telegram" => self::get("enable_telegram"),
             "payment_system" => self::get("payment_system"),
-          	"enable_crisp" => self::get("enable_crisp"),
-          	"crisp_id" => self::get("crisp_id"),
+          	"enable_mylivechat" => self::get("enable_mylivechat"),
+          	"mylivechat_id" => self::get("mylivechat_id"),
           	"enable_ticket"=> self::get("enable_ticket"),
 			"enable_admin_contact" => self::get("enable_admin_contact"),
 			"admin_contact1" => self::get("admin_contact1"),
@@ -49,6 +49,8 @@ class Config
             "enable_flag" => self::get("enable_flag"),
             "enable_kill" => self::get("enable_kill"),
             "custom_invite_price" => self::get("custom_invite_price"),
+            "captcha_provider" => self::get("captcha_provider"),
+            "enable_email_verify" => self::get("enable_email_verify"),
             "telegram_grouplink" => self::get("telegram_grouplink")
          ];
     }
